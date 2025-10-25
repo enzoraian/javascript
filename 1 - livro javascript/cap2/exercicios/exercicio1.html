@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1</title>
+</head>
+
+<body>
+    <h1>Farmácia JS</h1>
+
+    <p>
+        Medicamento:
+        <input type="text" id="inMedicamento">
+    </p>
+    <p>
+        Preço R$:
+        <input type="text" id="inPreco">
+    </p>
+    <input type="button" value="Mostrar Promoção" id="btnMostrar">
+
+    <h2 id="outTituloPromocao"></h2>
+    <h2 id="outValorPromocao"></h2>
+
+    <script>
+        let btn = document.getElementById("btnMostrar")
+        
+        function promocaoFarmacia(){
+            let medicamento = document.getElementById("inMedicamento")
+            let preco = document.getElementById("inPreco")
+            
+            // console.log(medicamento)
+            // console.log(preco)
+            // console.log(btn)
+
+            let tituloPromocao = document.getElementById("outTituloPromocao")
+            let valorPromocao = document.getElementById("outValorPromocao")
+        
+            // console.log(tituloPromocao)
+            // console.log(valorPromocao)
+        
+            tituloPromocao.textContent = "Promoção de " + medicamento.value
+            let precoLeveDois = (Math.floor(Number(preco.value))) * 2
+            valorPromocao.textContent = "Leve 2 por apenas R$: " + precoLeveDois.toFixed(2)
+        }
+
+
+        btn.addEventListener("click", promocaoFarmacia)
+
+    </script>
+</body>
+
+</html>
